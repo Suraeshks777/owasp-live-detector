@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo"><img src="icons/icon48.png"></div>
+      <div>
+        <div class="title">OWASP Live Detector</div>
+        <div id="target" class="subtitle">(no tab)</div>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="scan" class="btn primary">Scan</button>
+    </div>
+  </header>
+  <section class="panel summaryPanel">
+    <div class="sectionHeader">
+      <div class="sectionTitle">Summary</div>
+      <div class="sectionHint">Click a severity to jump to that section below</div>
+    </div>
+    <div id="summary" class="summaryCounts"></div>
+    <div class="focusRow">
+      <a class="focusChip critical" href="#sev-critical">Critical</a>
+      <a class="focusChip high" href="#sev-high">High</a>
+      <a class="focusChip medium" href="#sev-medium">Medium</a>
+      <a class="focusChip low" href="#sev-low">Low</a>
+      <a class="focusChip info" href="#sev-info">Info</a>
+      <a class="focusChip clear" href="#top">Clear</a>
+    </div>
+  </section>
+  <section class="panel findingsPanel" id="top">
+    <div class="sectionHeader">
+      <div class="sectionTitle">Findings</div>
+      <div class="sectionHint">Evidence + fix</div>
+    </div>
+    <div class="sevTargets">
+      <div id="sev-critical" class="sevTarget"></div>
+      <div id="sev-high" class="sevTarget"></div>
+      <div id="sev-medium" class="sevTarget"></div>
+      <div id="sev-low" class="sevTarget"></div>
+      <div id="sev-info" class="sevTarget"></div>
+    </div>
+    <div id="findings"></div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
